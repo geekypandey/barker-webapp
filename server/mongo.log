@@ -1,0 +1,15 @@
+● mongod.service - MongoDB Database Server
+   Loaded: loaded (/lib/systemd/system/mongod.service; disabled; vendor preset: enabled)
+   Active: failed (Result: exit-code) since Tue 2020-04-21 18:33:54 IST; 24s ago
+     Docs: https://docs.mongodb.org/manual
+  Process: 31833 ExecStart=/usr/bin/mongod --config /etc/mongod.conf (code=exited, status=14)
+ Main PID: 31833 (code=exited, status=14)
+
+Apr 21 18:33:54 bruhh systemd[1]: Started MongoDB Database Server.
+Apr 21 18:33:54 bruhh systemd[1]: mongod.service: Main process exited, code=exited, status=14/n/a
+Apr 21 18:33:54 bruhh systemd[1]: mongod.service: Failed with result 'exit-code'.
+
+
+Solution :
+sudo chown -R mongodb:mongodb /var/lib/mongodb
+sudo chown mongodb:mongodb /tmp/mongodb-27017.sock
